@@ -60,7 +60,7 @@ export default {
       return `${this.typing[0].toUpperCase()}${this.typing.substring(1)}`;
     },
     url() {
-      const se = 'https://www.google.com/#q=';
+      const se = 'https://www.google.com/search?q=';
       if (this.$options.userTyped && this.typing) {
         return `${se}${this.typing}`;
       }

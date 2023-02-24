@@ -96,17 +96,17 @@ export default {
     },
     addCard(name) {
       const key = name;
-      // if (this.cards.find(f => f.name === name)) {
-      //   key += `_${Math.floor(Math.random() * Math.floor(99))}`;
-      // }
+      if (this.cards.find(f => f.name === name)) {
+        key += `_${Math.floor(Math.random() * Math.floor(99))}`;
+      }
       this.$store.commit(
         'ADD_CARD',
         key,
       );
-      // this.$nextTick(() => {
-      //   const elem = document.getElementById(key);
-      //   this.$options.grid.add(elem);
-      // });
+      this.$nextTick(() => {
+        const elem = document.getElementById(key);
+        this.$options.grid.add(elem);
+      });
     },
     initGrid() {
       this.$options.grid = new Muuri('#card-container', {

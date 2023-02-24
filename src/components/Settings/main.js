@@ -1,6 +1,5 @@
 import colors from 'vuetify/es5/util/colors';
 import { loadLang } from '@/i18n';
-import Toast from '@/components/Toast';
 import countries from './countries';
 
 // @vue/component
@@ -34,32 +33,29 @@ export default {
         this.$store.commit('DEL_CARDS_CACHE');
       });
     },
-    settings: {
-      handler(val, old) {
-        if (Object.keys(old).length && !this.tipShown) {
-          Toast.show({ title: null, desc: this.$t('settings.apply_change') });
-          this.tipShown = true;
-        }
-      },
-      deep: true,
-    },
+    // settings: {
+    //   // handler(val, old) {
+    //   //   if (Object.keys(old).length && !this.tipShown) {
+    //   //     Toast.show({ title: null, desc: this.$t('settings.apply_change') });
+    //   //     this.tipShown = true;
+    //   //   }
+    //   // },
+    //   deep: true,
+    // },
   },
   beforeDestroy() {
-    this.save(false);
+    this.save();
   },
   beforeMount() {
     this.settings = this.$store.state.settings;
     this.backgroundLocal = this.$store.state.cache.backgroundLocal;
   },
   methods: {
-    save(showToast = true) {
+    save() {
       this.$store.commit('SET_SETTINGS', this.settings);
       this.$store.commit('SET_BACKGROUND_LOCAL', this.backgroundLocal);
       if (!this.validateHex(this.settings.theme.primary)) {
         this.$store.commit('RESET_SETTING', 'theme');
-      }
-      if (showToast) {
-        Toast.show({ title: this.$t('settings.saved') });
       }
     },
     fileChange(event) {
