@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_appName__",
+  "short_name": "dash",
+  "description": "__MSG_appDesc__",
+  "author": "verillious",
+  "version": "$version",
+  "icons": {
+    "16": "imgs/icon16.png",
+    "48": "imgs/icon48.png",
+    "128": "imgs/icon128.png"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "storage",
+    "geolocation",
+    "management",
+    "cookies"
+  ],
+  "host_permissions": [
+    "https://*.reddit.com/*",
+    "http://*.reddit.com/*"
+  ],
+  "optional_host_permissions": [
+    "https://*/",
+    "http://*/"
+  ],
+  "optional_permissions": [
+    "system.cpu",
+    "system.memory",
+    "system.storage",
+    "sessions",
+    "tabs",
+    "browsingData",
+    "downloads",
+    "downloads.open",
+    "topSites",
+    "identity",
+    "bookmarks"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}

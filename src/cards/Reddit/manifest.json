@@ -1,0 +1,8 @@
+{
+  "cacheValidity": 300,
+  "externalsRequests": true,
+  "settings": {
+    "feeds": ["https://www.reddit.com/.json"],
+    "apiKey": ""
+  }
+}

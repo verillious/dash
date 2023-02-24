@@ -1,0 +1,26 @@
+#settings {
+  .picker {
+    display: flex;
+    margin: auto;
+    li {
+      list-style: none;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      cursor: pointer;
+      .color-dot {
+        width: 6px;
+        height: 6px;
+        background: #fff;
+        margin: auto;
+      }
+    }
+  }
+  .file-btn {
+    display: inline-block;
+  }
+  .file-btn input[type=file] {
+    position: absolute;
+    opacity: 0;
+  }
+}
